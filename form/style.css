@@ -10,7 +10,7 @@ body{
     display:flex;
     justify-content:center;
     align-items:center;
-    background:url("b.jpeg") center/cover no-repeat;
+    background:url("bg.jpg") center/cover no-repeat;
 }
 
 /* Glass container */
