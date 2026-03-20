@@ -1,63 +1,94 @@
 body{
   font-family: "Inter", sans-serif;
-  background-color: hsl(0, 0%, 8%);
+  background: linear-gradient(135deg, hsl(0, 0%, 8%) 0%, hsl(0, 0%, 12%) 100%);
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
-  height: 90vh;
+  height: 100vh;
   font-weight: 600;
+  min-height: 100vh;
 }
 
 .card{
   height: 540px;
   width: 350px;
-  background-color: hsl(0, 0%, 12%);
-  border-radius: 10px;
+  background: linear-gradient(180deg, hsl(0, 0%, 15%) 0%, hsl(0, 0%, 12%) 100%);
+  border-radius: 16px;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 40px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 1px rgba(255, 255, 255, 0.1) inset;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover{
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6), 0 0 1px rgba(255, 255, 255, 0.12) inset;
 }
 
 .one{
   margin: 20px 0px 10px 0px;
-  font-size: 25px;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
 }
 
 .two{
-  color: greenyellow;
+  color: hsl(75, 94%, 57%);
   margin-bottom: 20px;
+  font-size: 13px;
+  font-weight: 500;
 }
 
 .self{
-  font-weight: 300;
+  font-weight: 400;
   margin-bottom: 30px;
+  font-size: 14px;
+  line-height: 1.6;
+  text-align: center;
 }
 
 .button{
   flex: 1;
   display: grid;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-  gap: 15px;
+  gap: 12px;
   text-align: center;
   width: 100%;
 }
 
 .links{
-  background-color: hsl(0, 0%, 20%);
-  padding: 15px;
-  border-radius: 5px;
+  background: linear-gradient(135deg, hsl(0, 0%, 22%) 0%, hsl(0, 0%, 20%) 100%);
+  padding: 16px 15px;
+  border-radius: 8px;
   font-size: 14px;
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
 }
 
 .links:hover{
-  background-color: greenyellow;
-  color: black;
-  cursor: pointer;
+  background: linear-gradient(135deg, hsl(75, 94%, 57%) 0%, hsl(75, 94%, 48%) 100%);
+  color: hsl(0, 0%, 8%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(204, 255, 0, 0.3);
+}
+
+.links:active{
+  transform: translateY(0);
+  box-shadow: 0 4px 12px rgba(204, 255, 0, 0.2);
 }
 
 .profile-image{
-  height: 80px;
-  border-radius: 100%;
+  height: 88px;
+  width: 88px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(204, 255, 0, 0.2);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
