@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link rel="stylesheet" href="./style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <title>Contact form</title>
+  </head>
+
+  <body>
+    <main class="form-container">
+      <form id="contact-form" novalidate>
+        <h1>Contact Us</h1>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="first-name">First Name *</label>
+            <input type="text" id="first-name" name="first-name" required />
+            <span class="error-message" id="error-first-name"
+              >This field is required</span
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="last-name">Last Name *</label>
+            <input type="text" id="last-name" name="last-name" required />
+            <span class="error-message" id="error-last-name">This field is required</span
+            >
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address *</label>
+          <input type="email" id="email" name="email" required />
+          <span class="error-message" id="error-email">Please enter a valid email address</span
+          >
+        </div>
+
+        <div class="form-group">
+          <label>Query Type *</label>
+          <div class="query-container">
+            <label class="radio-card">
+              <input type="radio" name="query-type" value="general" required />
+              <span>General Enquiry</span>
+            </label>
+            <label class="radio-card">
+              <input type="radio" name="query-type" value="support" />
+              <span>Support Request</span>
+            </label>
+          </div>
+          <span class="error-message" id="error-query"
+            >Please select a query type</span
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="message" type="text">Message *</label>
+          <textarea id="message" required></textarea>
+          <span class="error-message" id="error-message">This field is required</span
+          >
+        </div>
+
+        <div class="form-group checkbox-group">
+          <label class="checkbox-container">
+            <input type="checkbox" name="consent" required />
+            <span class="checkbox-text">I consent to being contacted by the team *</span
+            >
+          </label>
+          <span class="error-message" id="error-consent">To submit this form, please consent to being contacted</span
+          >
+        </div>
+
+        <button type="submit" class="submit-btn">Submit</button>
+      </form>
+    </main>
+
+    <div id="success-toast" class="success-toast hidden">
+      <div class="toast-header">
+        <img src="./assets/images/icon-success-check.svg" alt="" />
+        <strong>Message Sent!</strong>
+      </div>
+      <p>Thanks for completing the form. We'll be in touch soon!</p>
+    </div>
+  </body>
+  <script src="./script.js"></script>
+</html>
