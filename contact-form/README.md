@@ -33,9 +33,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: https://github.com/PatoCatejo/contact-form
-- Live Site URL: https://patocatejo.github.io/contact-form/
-
+- Solution URL: https://github.com/AmosStack/Frontend-master-challenges/tree/main/contact-form
+- Live Site URL: https://contact-form-q.netlify.app/
 ## My process
 
 ### Built with
@@ -74,4 +73,4 @@ form.addEventListener("submit", (e) => {
 
 ## Author
 
-👤 **Patricio Catejo**
+👤 **AmosStack**
