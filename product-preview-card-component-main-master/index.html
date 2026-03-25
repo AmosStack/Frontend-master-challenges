@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <link rel="stylesheet" href="./styles/styles.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  
+  <title>Frontend Mentor | Product preview card component</title>
+</head>
+<body>
+  <main>
+    <article class="perfume-card">
+
+      <picture class="image-container">
+        <source media="(min-width: 43rem)" srcset="./images/image-product-desktop.jpg">
+        <img src="./images/image-product-mobile.jpg" alt="Gabrielle Essence Eau De Parfum" loading="lazy">
+      </picture>
+
+      <div class="content-info">
+        <p class="item-category">Perfume</p>
+        <h1 class="perfume-name">Gabrielle Essence Eau De Parfum</h1>
+        <p class="perfume-description">A floral, solar and voluptuous interpretation composed by Olivier Polge, Perfumer-Creator for the House of <span class="brand-name">CHANEL</span>.</p>
+        <div class="price-container">
+        <span class="discounted-price">$149.99</span>
+        <span class="former-price">$169.99</span>
+        </div>
+        <div class="call-to-action-btn-container">
+        <button type="button" class="call-to-action-cart-btn"><img src="./images/icon-cart.svg" alt="put into cart" aria-hidden="true">Add to Cart</button>
+        </div>
+      </div>
+    </article>
+  </main>
+</body>
+</html>
