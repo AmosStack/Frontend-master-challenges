@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="REST Countries Explorer with search, region filters, detailed country pages, border-country navigation, and theme toggle."
+    />
+    <meta name="theme-color" content="#ffffff" />
+    <title>REST Countries Explorer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <noscript>
+      <p class="empty" style="margin: 1rem">
+        This application requires JavaScript to run. Please enable JavaScript and reload the page.
+      </p>
+    </noscript>
+    <header class="topbar">
+      <div class="topbar-inner">
+        <h1 class="title">Where in the world?</h1>
+        <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle color theme">
+          <span class="icon" aria-hidden="true">&#9789;</span>
+          <span id="themeText">Dark Mode</span>
+        </button>
+      </div>
+    </header>
+
+    <main class="app-shell" id="appShell">
+      <section id="listView" class="view" aria-label="Country list view">
+        <div class="controls">
+          <label class="search-wrap" for="searchInput">
+            <span class="search-icon" aria-hidden="true">&#128269;</span>
+            <input
+              id="searchInput"
+              type="text"
+              placeholder="Search for a country..."
+              autocomplete="off"
+              aria-label="Search countries"
+            />
+          </label>
+
+          <label class="region-wrap" for="regionFilter">
+            <select id="regionFilter" aria-label="Filter by region">
+              <option value="">Filter by Region</option>
+              <option value="Africa">Africa</option>
+              <option value="Americas">Americas</option>
+              <option value="Asia">Asia</option>
+              <option value="Europe">Europe</option>
+              <option value="Oceania">Oceania</option>
+            </select>
+          </label>
+        </div>
+
+        <p id="resultSummary" class="result-summary" aria-live="polite"></p>
+        <section id="countryGrid" class="country-grid" aria-label="Countries"></section>
+      </section>
+
+      <section id="detailView" class="view hidden" aria-label="Country detail view">
+        <button id="backButton" class="back-button" type="button">&#8592; Back</button>
+
+        <article id="countryDetail" class="country-detail"></article>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
