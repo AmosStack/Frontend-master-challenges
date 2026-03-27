@@ -1,8 +1,8 @@
 :root {
   --bg: hsl(0, 0%, 99%);
-  --surface: hsl(0, 100%, 100%);
+  --surface: hsl(0, 50%, 100%);
   --text: hsl(200, 15%, 8%);
-  --muted: hsl(0, 0%, 50%);
+  --muted: hsl(0, 25%, 97%);
   --shadow: 0 8px 28px rgba(24, 35, 44, 0.08);
   --ring: rgba(65, 138, 255, 0.4);
   --accent: #1f6aa5;
