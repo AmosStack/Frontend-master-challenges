@@ -5,9 +5,9 @@ body{
   align-items: center;
   justify-content: center;
   color: white;
-  height: 100vh;
   font-weight: 600;
   min-height: 100vh;
+  margin: 0;
 }
 
 .card{
@@ -28,43 +28,46 @@ body{
   box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6), 0 0 1px rgba(255, 255, 255, 0.12) inset;
 }
 
-.one{
+.card__title{
   margin: 20px 0px 10px 0px;
   font-size: 26px;
   font-weight: 700;
   letter-spacing: -0.5px;
 }
 
-.two{
+.card__location{
   color: hsl(75, 94%, 57%);
-  margin-bottom: 20px;
+  margin: 0 0 20px;
   font-size: 13px;
   font-weight: 500;
 }
 
-.self{
+.card__bio{
   font-weight: 400;
-  margin-bottom: 30px;
+  margin: 0 0 30px;
   font-size: 14px;
   line-height: 1.6;
   text-align: center;
 }
 
-.button{
+.card__links{
   flex: 1;
-  display: grid;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  display: flex;
+  flex-direction: column;
   gap: 12px;
-  text-align: center;
   width: 100%;
 }
 
-.links{
+.card__link{
   background: linear-gradient(135deg, hsl(0, 0%, 22%) 0%, hsl(0, 0%, 20%) 100%);
   padding: 16px 15px;
   border-radius: 8px;
   font-size: 14px;
   font-weight: 600;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  line-height: 1.2;
   border: 1px solid rgba(255, 255, 255, 0.05);
   transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
@@ -72,19 +75,24 @@ body{
   overflow: hidden;
 }
 
-.links:hover{
+.card__link:hover{
   background: linear-gradient(135deg, hsl(75, 94%, 57%) 0%, hsl(75, 94%, 48%) 100%);
   color: hsl(0, 0%, 8%);
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(204, 255, 0, 0.3);
 }
 
-.links:active{
+.card__link:active{
   transform: translateY(0);
   box-shadow: 0 4px 12px rgba(204, 255, 0, 0.2);
 }
 
-.profile-image{
+.card__link:focus-visible{
+  outline: 2px solid hsl(75, 94%, 57%);
+  outline-offset: 2px;
+}
+
+.card__avatar{
   height: 88px;
   width: 88px;
   border-radius: 50%;
