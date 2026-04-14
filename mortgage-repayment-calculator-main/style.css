@@ -1,0 +1,379 @@
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  src: url("./assets/fonts/PlusJakartaSans-VariableFont_wght.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 500 700;
+}
+
+:root {
+  --lime: hsl(61, 70%, 52%);
+  --red: hsl(4, 69%, 50%);
+  --white: hsl(0, 0%, 100%);
+  --slate-100: hsl(202, 86%, 94%);
+  --slate-300: hsl(203, 41%, 72%);
+  --slate-500: hsl(200, 26%, 54%);
+  --slate-700: hsl(200, 24%, 40%);
+  --slate-900: hsl(202, 55%, 16%);
+  --slate-950: hsl(201, 58%, 12%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--slate-100);
+  color: var(--slate-900);
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.page {
+  min-height: calc(100vh - 44px);
+  display: grid;
+  place-items: center;
+}
+
+.calculator-card {
+  width: min(57.5rem, 100%);
+  background: var(--white);
+}
+
+.form-panel {
+  padding: 1.5rem;
+}
+
+.form-header {
+  margin-bottom: 1.5rem;
+}
+
+.form-header h1 {
+  margin: 0;
+  font-size: 1.95rem;
+  line-height: 1.2;
+}
+
+.clear-button {
+  border: 0;
+  background: transparent;
+  color: var(--slate-700);
+  text-decoration: underline;
+  margin-top: 0.4rem;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label,
+legend {
+  display: block;
+  color: var(--slate-700);
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+legend {
+  margin-bottom: 0.8rem;
+}
+
+fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0 0 0.8rem;
+}
+
+.row {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.input-with-affix {
+  display: flex;
+  border: 1px solid var(--slate-500);
+  border-radius: 0.35rem;
+  overflow: hidden;
+  background: var(--white);
+}
+
+.affix {
+  min-width: 2.75rem;
+  background: var(--slate-100);
+  color: var(--slate-700);
+  font-size: 1.72rem;
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+  padding: 0 0.9rem;
+}
+
+.input-with-affix input {
+  border: 0;
+  outline: 0;
+  width: 100%;
+  min-height: 3.1rem;
+  padding: 0 0.9rem;
+  font-size: 1.72rem;
+  font-weight: 700;
+  color: var(--slate-900);
+}
+
+.input-with-affix:focus-within {
+  border-color: var(--lime);
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  border: 1px solid var(--slate-500);
+  border-radius: 0.35rem;
+  min-height: 3.1rem;
+  margin-bottom: 0.6rem;
+  padding: 0 0.9rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--slate-900);
+  cursor: pointer;
+}
+
+.radio-option input {
+  appearance: none;
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 50%;
+  border: 2px solid var(--slate-700);
+  display: grid;
+  place-items: center;
+  margin: 0;
+  flex-shrink: 0;
+}
+
+.radio-option input::before {
+  content: "";
+  width: 0.58rem;
+  height: 0.58rem;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: transform 0.15s ease;
+  background: var(--lime);
+}
+
+.radio-option input:checked {
+  border-color: var(--lime);
+}
+
+.radio-option input:checked::before {
+  transform: scale(1);
+}
+
+.radio-option:has(input:checked) {
+  border-color: hsl(61, 70%, 44%);
+  background: hsla(61, 70%, 52%, 0.16);
+}
+
+.calculate-button {
+  width: 100%;
+  min-height: 3.4rem;
+  border: 0;
+  border-radius: 999px;
+  background: var(--lime);
+  color: var(--slate-900);
+  font-size: 1.6rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  cursor: pointer;
+}
+
+.calculate-button:hover,
+.calculate-button:focus-visible {
+  background: hsl(61, 66%, 64%);
+}
+
+.calculate-button img {
+  width: 1.15rem;
+}
+
+.clear-button:hover,
+.clear-button:focus-visible {
+  color: var(--slate-900);
+}
+
+.radio-option:hover,
+.radio-option:focus-within {
+  border-color: var(--lime);
+}
+
+.error-text {
+  min-height: 1.2rem;
+  margin: 0.35rem 0 0;
+  font-size: 0.875rem;
+  color: var(--red);
+}
+
+.form-group.has-error .input-with-affix,
+.form-group.has-error .radio-option {
+  border-color: var(--red);
+}
+
+.form-group.has-error .input-with-affix .affix {
+  background: var(--red);
+  color: var(--white);
+}
+
+.results-panel {
+  background: var(--slate-900);
+  color: var(--white);
+  padding: 1.9rem 1.5rem;
+}
+
+.empty-results {
+  text-align: center;
+}
+
+.empty-results img {
+  width: min(100%, 12rem);
+}
+
+.empty-results h2,
+.filled-results h2 {
+  margin: 1rem 0 0.8rem;
+  font-size: 1.85rem;
+}
+
+.empty-results p,
+.results-description,
+.results-label {
+  margin: 0;
+  color: var(--slate-300);
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+.results-box {
+  margin-top: 1.35rem;
+  border-top: 4px solid var(--lime);
+  background: var(--slate-950);
+  border-radius: 0.65rem;
+  padding: 1.2rem 1rem;
+}
+
+.monthly-value {
+  margin: 0.65rem 0 0;
+  color: var(--lime);
+  font-size: clamp(2.2rem, 7vw, 3.4rem);
+  font-weight: 700;
+}
+
+.results-box hr {
+  border: 0;
+  border-top: 1px solid hsla(203, 41%, 72%, 0.35);
+  margin: 1rem 0;
+}
+
+.total-value {
+  margin: 0.5rem 0 0;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.is-hidden {
+  display: none;
+}
+
+.attribution {
+  font-size: 0.6875rem;
+  text-align: center;
+  padding: 0.65rem;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media (min-width: 48rem) {
+  .page {
+    padding: 1.5rem;
+  }
+
+  .calculator-card {
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    border-radius: 1.4rem;
+    overflow: hidden;
+    box-shadow: 0 20px 38px rgba(0, 0, 0, 0.14);
+  }
+
+  .form-panel {
+    padding: 2rem;
+  }
+
+  .form-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.7rem;
+  }
+
+  .form-header h1 {
+    font-size: 1.95rem;
+  }
+
+  .clear-button {
+    margin-top: 0;
+    font-size: 0.95rem;
+  }
+
+  .row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .form-group label,
+  legend {
+    font-size: 0.92rem;
+  }
+
+  .affix,
+  .input-with-affix input,
+  .radio-option,
+  .calculate-button {
+    font-size: 1.4rem;
+  }
+
+  .input-with-affix input,
+  .radio-option,
+  .calculate-button {
+    min-height: 2.95rem;
+  }
+
+  .results-panel {
+    border-bottom-left-radius: 4.5rem;
+    padding: 2rem;
+  }
+
+  .empty-results,
+  .filled-results {
+    max-width: 20rem;
+    margin: 0 auto;
+  }
+
+  .results-box {
+    padding: 1.35rem;
+  }
+
+  .monthly-value {
+    font-size: clamp(2.4rem, 4vw, 3.5rem);
+  }
+
+  .total-value {
+    font-size: 1.95rem;
+  }
+}
