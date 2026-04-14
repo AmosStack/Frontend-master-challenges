@@ -1,21 +1,19 @@
 # Frontend Master Challenges
 
-A collection of small frontend practice projects built with HTML, CSS, and JavaScript.
+A collection of frontend practice projects built with HTML, CSS, and JavaScript.
 
 ## Projects
 
-- `Animated login page/`
-	- Animated login form UI
-	- Includes `index.html`, `styles.css`, `script.js`, and `db.sql`
-- `contact-form/`
-	- Contact form challenge
-	- Includes design assets, style guide, and interactive form scripts
-- `glymorphism form/`
-	- Glassmorphism-style form UI
-	- Includes `form.html` and `style.css`
-- `SocialLinks/`
-	- Social links profile page challenge
-	- Includes style guide and design references
+- `age-calculator-app-main/` - Age calculator with date validation and dynamic result display.
+- `Animated login page/` - Animated login form UI (`index.html`, `styles.css`, `script.js`, `db.sql`).
+- `contact-form/` - Contact form challenge with validation and design assets.
+- `glymorphism form/` - Glassmorphism-style form UI (`form.html`, `style.css`).
+- `interactive-card-details-form-main/` - Interactive card details form challenge.
+- `launch-countdown-timer-main/` - Launch countdown timer with live ticking timer.
+- `mortgage-repayment-calculator-main/` - Mortgage repayment calculator with result states.
+- `product-preview-card-component-main-master/` - Product preview card component challenge.
+- `rest-countries-api-with-color-theme-switcher-master/` - REST Countries API challenge with theme switcher.
+- `SocialLinks/` - Social links profile page challenge.
 
 ## Tech Stack
 
@@ -27,17 +25,18 @@ A collection of small frontend practice projects built with HTML, CSS, and JavaS
 
 1. Clone the repository:
 
-	 ```bash
-	 git clone https://github.com/AmosStack/Frontend-master-challenges.git
-	 ```
+   ```bash
+   git clone https://github.com/AmosStack/Frontend-master-challenges.git
+   ```
 
-2. Open the project folder in VS Code.
-3. Open any project directory and run the HTML file in a browser.
+2. Open the folder in VS Code.
+3. Move into any project directory.
+4. Open its main HTML file in a browser (or use Live Server).
 
 Example:
 
 ```bash
-cd "Animated login page"
+cd age-calculator-app-main
 ```
 
 Then open `index.html` in your browser.
@@ -45,7 +44,8 @@ Then open `index.html` in your browser.
 ## Notes
 
 - Each folder is an independent mini-project.
-- Design references and style guides are included where available.
+- Most projects include design references and style guides.
+- Some challenge folders include helper docs like `AGENTS.md` and `CLAUDE.md`.
 
 ## License
 
