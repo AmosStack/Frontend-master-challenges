@@ -1,0 +1,195 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@700&display=swap");
+
+:root {
+  --grayish-blue: hsl(237, 18%, 59%);
+  --soft-red: hsl(345, 95%, 68%);
+  --white: hsl(0, 0%, 100%);
+  --card-top: hsl(236, 20%, 24%);
+  --card-bottom: hsl(236, 18%, 22%);
+  --very-dark-blue: hsl(235, 16%, 14%);
+  --very-dark-mostly-black-blue: hsl(234, 17%, 12%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Red Hat Text", sans-serif;
+  color: var(--white);
+  background-color: var(--very-dark-blue);
+  background-image: linear-gradient(180deg, hsl(235, 18%, 14%) 0%, hsl(248, 21%, 13%) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("./images/bg-stars.svg") repeat;
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+body::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: min(29vh, 12.5rem);
+  background: url("./images/pattern-hills.svg") center bottom / cover no-repeat;
+  pointer-events: none;
+}
+
+.page {
+  min-height: calc(100vh - 42px);
+  display: grid;
+  grid-template-rows: 1fr auto;
+  place-items: center;
+  position: relative;
+  z-index: 1;
+  padding: 8.75rem 1.5rem 7.75rem;
+}
+
+h1 {
+  margin: 0 0 3.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.42rem;
+  font-size: clamp(1.22rem, 3.3vw, 1.85rem);
+  text-align: center;
+}
+
+.countdown {
+  display: flex;
+  gap: clamp(0.65rem, 2vw, 1.85rem);
+}
+
+.time-unit {
+  width: clamp(4.45rem, 10vw, 9.45rem);
+  text-align: center;
+}
+
+.flip-card {
+  position: relative;
+  height: clamp(4.2rem, 9.5vw, 8.8rem);
+  border-radius: 0.55rem;
+  background: linear-gradient(180deg, var(--card-top) 50%, var(--card-bottom) 50%);
+  box-shadow: 0 0.6rem 0 hsl(235, 19%, 16%);
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+}
+
+.flip-card::before,
+.flip-card::after {
+  content: "";
+  position: absolute;
+  top: calc(50% - 0.2rem);
+  width: 0.42rem;
+  height: 0.42rem;
+  border-radius: 50%;
+  background: hsl(234, 17%, 12%);
+}
+
+.flip-card::before {
+  left: -0.2rem;
+}
+
+.flip-card::after {
+  right: -0.2rem;
+}
+
+.flip-card span {
+  color: var(--soft-red);
+  font-size: clamp(2.1rem, 5.6vw, 5.1rem);
+  letter-spacing: -0.08rem;
+  line-height: 1;
+  transform-origin: center;
+}
+
+.flip-card.is-flipping span {
+  animation: flip 0.36s ease;
+}
+
+.time-unit p {
+  margin: 1.35rem 0 0;
+  text-transform: uppercase;
+  letter-spacing: 0.28rem;
+  color: var(--grayish-blue);
+  font-size: clamp(0.46rem, 1.25vw, 0.95rem);
+}
+
+.socials {
+  display: flex;
+  gap: 2rem;
+  margin-top: 6.5rem;
+}
+
+.social-link {
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: var(--grayish-blue);
+  transition: background-color 0.2s ease;
+}
+
+.social-link:hover,
+.social-link:focus-visible {
+  background-color: var(--soft-red);
+}
+
+.social-facebook {
+  mask: url("./images/icon-facebook.svg") center / contain no-repeat;
+}
+
+.social-pinterest {
+  mask: url("./images/icon-pinterest.svg") center / contain no-repeat;
+}
+
+.social-instagram {
+  mask: url("./images/icon-instagram.svg") center / contain no-repeat;
+}
+
+.attribution {
+  position: relative;
+  z-index: 2;
+  font-size: 0.6875rem;
+  text-align: center;
+  color: var(--grayish-blue);
+  padding: 0.35rem;
+}
+
+.attribution a {
+  color: var(--soft-red);
+}
+
+@keyframes flip {
+  0% {
+    transform: rotateX(0deg) scale(1);
+  }
+
+  50% {
+    transform: rotateX(-15deg) scale(0.98);
+  }
+
+  100% {
+    transform: rotateX(0deg) scale(1);
+  }
+}
+
+@media (max-width: 30rem) {
+  .page {
+    padding-top: 8.5rem;
+  }
+
+  h1 {
+    margin-bottom: 3.5rem;
+  }
+
+  .socials {
+    margin-top: 7rem;
+  }
+}
